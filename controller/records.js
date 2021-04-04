@@ -1,4 +1,15 @@
 const Records = require("../db/models/records");
+
+/**
+ *
+ * @param {*} req
+ * @param {*} res
+ * @returns response
+ * @aggregation pipeline query
+ * 1st stage Match
+ * 2nd Stage project the totalCount
+ * 3rd Stage get Range of total count
+ */
 const get = async (req, res) => {
   try {
     const { startDate, endDate, minCount, maxCount } = req.body;

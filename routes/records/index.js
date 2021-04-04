@@ -1,10 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
-const recordsController = require("../../controller/records")
+const recordsController = require("../../controller/records");
 
+/**
+ * @route get /records
+ * All params are mandatory
+ */
 
-/* Get records. */
 router.get(
   "/",
   [
@@ -22,7 +25,7 @@ router.get(
         errors: errors,
       });
     }
-    return recordsController.get(req, res)
+    return recordsController.get(req, res);
   }
 );
 
